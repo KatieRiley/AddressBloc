@@ -20,7 +20,7 @@ RSpec.describe AddressBook do
     end
 
     it "initializes entries as empty" do
-      expect(book.entries.size).to eq(0)
+      expect(book.entries.size).to eq 0
     end
   end
 
@@ -28,7 +28,7 @@ RSpec.describe AddressBook do
     it "adds only one entry to the address book" do
       book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
 
-      expect(book.entries.size).to eq(1)
+      expect(book.entries.size).to eq 1
     end
 
     it "adds the correct information to entries" do
