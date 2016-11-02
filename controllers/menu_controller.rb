@@ -15,6 +15,7 @@ class MenuController
     puts "4 - Import entries from a CSV"
     puts "5 - View Entry Number n"
     puts "6 - Exit"
+    puts "7 - delets all entries from Address Bloc"
     puts "Enter your selection: "
 
     selection = gets.to_i
@@ -43,6 +44,10 @@ class MenuController
     when 6
       puts "Good-bye"
       exit(0)
+    when 7
+      system "clear"
+      demolish
+      main_menu
     else
       system "clear"
       puts "Sorry, that is not a valid input"
@@ -192,5 +197,14 @@ class MenuController
      system "clear"
      puts "Updated entry:"
      puts entry
-   endadd
+   end
+
+   def demolish
+     index = 0
+     entries_length = address_book.entries.length
+     while entries_length != 0
+       delete_entry(address_book.entries[0])
+       entries_length = entries_length - 1
+     end
+   end
 end
